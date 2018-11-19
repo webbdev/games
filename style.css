@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f3f3;
+  color: #1e1e1e;
+}
+
+.wrapper {
+  margin: 50px auto;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 20px;
+  margin-bottom: 35px
+}
+
+.container {
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.game1,
+.game2 {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  padding: 0 15px;
+}
+
+.board {
+  position: relative;
+  margin: 10px auto;
+  text-align: center;
+  width: 340px;
+  height: 340px;
+  display: grid;
+  background-color: #fff;
+  grid-gap: 4px;
+  grid-template-columns: 33% 33% 33%;
+  grid-auto-rows: 33% 33% 33%;
+}
+
+.game1 .cell {
+  position: relative;
+  background-color: #60aae4;
+  cursor: pointer;
+}
+
+.game2 .cell2 {
+  position: relative;
+  background-color: #004080;
+  cursor: pointer;
+  color: #fff;
+}
+
+.cell::before,
+.cell2::before {
+  position: absolute;
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  font-size: 68px;
+}
+
+.cell.x::before,
+.cell2.x::before {
+  content: "X";
+}
+
+.cell.o::before,
+.cell2.o::before {
+  content: "O";
+}
+
+.gameOver,
+.gameOver2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 86px;
+  left: 21px;
+  width: 300px;
+  height: 170px;
+  padding: 15px;
+  font-size: 26px;
+  border-radius: 4px;
+  text-align: center;
+  background-color: #fff;
+  -webkit-animation: animate .5s linear;;
+  animation: animate .5s linear;
+}
+
+.gameOver2 {
+  font-size: 24px;
+}
+
+@-webkit-keyframes animate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.gameOver button,
+.gameOver2 button {
+  margin-top: 25px;
+  width: 100px;
+  height: 35px;
+  line-height: 35px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #003366;
+  font-size: 15px;
+}
+
+.gameOver2 button {
+  margin-top: 20px;
+}
+
+.gameOver button:hover,
+.gameOver2 button:hover  {
+  background-color: #004080;
+}
+
+@media screen and (max-width: 768px) {
+  .game1,
+  .game2 {
+    display: inline-block;
+    float: none;
+    width: 100%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+  }
+}
